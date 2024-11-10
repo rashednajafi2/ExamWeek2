@@ -1,28 +1,3 @@
-//import 'package:flutter/material.dart';
-
-//void main() {
-  //runApp(YaAliMadadApp());
-//}
-
-//class YaAliMadadApp extends StatelessWidget {
-  //@override
-  //Widget build(BuildContext context) {
-    //return MaterialApp(
-      //debugShowCheckedModeBanner: false,
-      //title: 'Bangla Duas',
-      //home: Scaffold(
-        //backgroundColor: Colors.lightGreenAccent,
-        //appBar: AppBar(
-          //title: Text('Bangla Duas'),
-          //centerTitle: true,
-          //backgroundColor: Colors.white,
-        //),
-        //body: Image.asset('images/hussain_as.jpg')
-      //),
-    //);
-  //}
-//}
-
 import 'package:flutter/material.dart';
 
 void main() {
