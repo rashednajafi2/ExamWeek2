@@ -1,62 +1,51 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(ExamWeek2Assign());
+  runApp(NeedBloodApp());
 }
 
-class ExamWeek2Assign extends StatelessWidget {
+class NeedBloodApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ExamWeek2Dashboard(),
+      home: NeedBloodScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class ExamWeek2Dashboard extends StatelessWidget {
+class NeedBloodScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.orangeAccent,
-        title: Text("Exam Week 2 Profile"),
+        backgroundColor: Colors.redAccent,  // App Bar (Red Color)
+        title: Text("Need Blood"),
         actions: [
           IconButton(
             icon: Icon(Icons.add),
             onPressed: () {
             },
           ),
-          IconButton(
-            icon: Icon(Icons.settings),
-            onPressed: () {
-            },
-          ),
-          IconButton(
-            icon: Icon(Icons.phone),
-            onPressed: () {
-            },
-          ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            InfoCard(
-              icon: Icons.icecream,
-              text: "Ice cream is very delicious, isn't it?",
+            CircleAvatar(
+              radius: 50,
+              backgroundColor: Colors.grey,  // Circle Background color
+              child: Icon(
+                Icons.bloodtype,  // Blood drop icon
+                size: 40,
+                color: Colors.redAccent,  // Blood Color
+              ),
             ),
-            SizedBox(height: 25),
-            InfoCard(
-              icon: Icons.code,
-              text: "Programming is enjoyable if you're passionate about it!",
-            ),
-            SizedBox(height: 25),
-            InfoCard(
-              icon: Icons.egg,
-              text: "Submitting code directly copied will result in a zero mark.",
+            SizedBox(height: 10),  // Icon & Text Space
+            Text(
+              "Donate Blood",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
           ],
         ),
@@ -64,34 +53,3 @@ class ExamWeek2Dashboard extends StatelessWidget {
     );
   }
 }
-
-class InfoCard extends StatelessWidget {
-  final IconData icon;
-  final String text;
-
-  InfoCard({required this.icon, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CircleAvatar(
-          radius: 48,
-          backgroundColor: Colors.purple[100],
-          child: Icon(
-            icon,
-            size: 44,
-            color: Colors.deepPurple,
-          ),
-        ),
-        SizedBox(height: 8),
-        Text(
-          text,
-          style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),
-          textAlign: TextAlign.center,
-        ),
-      ],
-    );
-  }
-}
-
